@@ -10,6 +10,21 @@ function Square(props) {
   );
 }
 
+
+class List extends React.Component{
+
+  render(){
+     const numbers = [1, 2, 3, 4, 5];
+     const listItems = numbers.map((number) =>
+                                    <li key={number.toString()}>{number}</li>
+                                  );
+    return (
+      <ul>{listItems}</ul>
+      )
+  }
+}
+
+
 class Board extends React.Component {
 
   
@@ -24,6 +39,7 @@ class Board extends React.Component {
     
     return (
       <div>
+        <div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -39,7 +55,12 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        </div>
+        <div>
+        <List/>
+        </div>
       </div>
+      
     );
   }
 }
